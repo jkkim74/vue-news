@@ -1,24 +1,18 @@
 <template>
  <div>
-    <div v-for="news in newsList" >{{ news.title }}</div>    
+    <div v-for=" item in getNewsList()" >{{ item.title }}</div>    
   </div>
 </template>
 
 <script>
-import { fetchNewsList } from '@/api/index';
-
 export default {
-    data(){
-        return {
-            newsList: []
-        }
-    },
     created(){
-        fetchNewsList()
-        .then(response => this.newsList = response.data)
-        .catch(function(error){
-            console.log(error);
-        })
+        this.$store.dispatch('FETCH_NEWS');
+    },
+    methods: {
+        getNewsList(){
+            return this.$store.state.news;
+        }
     }
 }
 </script>
