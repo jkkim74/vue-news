@@ -1,19 +1,24 @@
 <template>
- <div>
-    <div v-for=" item in getNewsList()" >{{ item.title }}</div>    
+ <div>  
+    <p  v-for=" item in fetchedNews">
+        <a v-bind:href="item.url">{{ item.title }}</a>
+        <small>{{ item.time_ago }} by {{ item.user }}</small>
+    </p>  
+   
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 export default {
+    computed: {
+        ...mapGetters([
+            'fetchedNews'
+        ])
+    },
     created(){
         this.$store.dispatch('FETCH_NEWS');
     },
-    methods: {
-        getNewsList(){
-            return this.$store.state.news;
-        }
-    }
 }
 </script>
 
