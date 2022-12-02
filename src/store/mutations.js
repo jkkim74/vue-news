@@ -11,7 +11,7 @@ export default {
     SET_USER(state,user){
         state.user = user;
     },
-    SET_ASK_INFO(state,askInfo){
-        state.askInfo = askInfo;
+    SET_ITEM(state,item){
+        state.item = item;
     }
 }
