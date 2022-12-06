@@ -20,6 +20,18 @@ body {
   padding: 0;
   margin: 0;
 }
+a {
+  color: #344952;
+  text-decoration: none;
+}
+
+a.router-link-exact-active {
+  text-decoration: underline;
+}
+
+a.hover {
+  color:#42b883;
+}
 
 .page-enter-active,.page-leave-active {
   transition: opacity 0.5s ease;
