@@ -1,9 +1,23 @@
 <template>
 <div>
-    <p  v-for=" item in fetchedAsk ">
-        <router-link v-bind:to="`/item/${item.id}`">{{ item.title }}</router-link>
-        <small>{{ item.time_ago }} by {{ item.user }}</small>
-    </p>  
+    <ul class="asks-list">
+        <li  v-for=" item in fetchedAsk " class="ask">
+            <div class="points">
+
+            </div>
+            <div>
+                <router-link v-bind:to="`/item/${item.id}`" class="ask-title">{{ item.title }}</router-link>
+                 <small class="link-text">
+                    {{ item.time_ago }} by 
+                    <router-link v-bind:to="`/user/${item.user}`" class="link-text">{{ item.user }}</router-link>
+                </small>
+            </div>
+        </li>
+    </ul>
+   
+   
+   
+/ 
 </div>  
 </template>
 
@@ -29,6 +43,31 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.asks-list {
+    margin:0;
+    padding: 0;
+}
+.ask {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+.points {
+    width: 20px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #42b883;
+}
+.ask-title {
+    margin: 0;
+}
+
+.link-text {
+    color: #820828;
+}
 
 </style>
