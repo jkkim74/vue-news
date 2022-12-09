@@ -1,20 +1,5 @@
 <template>
 <div>
-    <!-- <p>title : {{itemInfo.title}}</p> 
-    <p>points : {{ itemInfo.points }}</p>
-    <p>user : {{itemInfo.user}}</p>
-    <p>time : {{itemInfo.time}}</p>
-    <p>time_ago : {{ itemInfo.time_ago }}</p>
-    <p>content : {{itemInfo.content}}</p>
-    <p>deleted : {{ itemInfo.deleted }}</p>
-    <p>dead : {{ itemInfo.dead }}</p>
-    <p>type : {{ itemInfo.type }}</p>
-    <p>url : {{ itemInfo.url }}</p>
-    <p>domain : {{ itemInfo.domain }}</p>
-    <p>comments : {{ itemInfo.comments }}</p>
-    <p>level : {{ itemInfo.level }}</p>
-    <p>comments_count : {{ itemInfo.comments_count }}</p> -->
-    <!-- {{ this.$store.state.item }} -->
     <section>
         <!-- 질문상세정보 -->
         <div class="user-container">

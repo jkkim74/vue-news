@@ -3,10 +3,12 @@
     <ul class="asks-list">
         <li  v-for=" item in fetchedAsk " class="ask">
             <div class="points">
-
+                {{ item.points }}
             </div>
             <div>
-                <router-link v-bind:to="`/item/${item.id}`" class="ask-title">{{ item.title }}</router-link>
+                <p class="ask-title">
+                    <router-link v-bind:to="`/item/${item.id}`" >{{ item.title }}</router-link>
+                </p>
                  <small class="link-text">
                     {{ item.time_ago }} by 
                     <router-link v-bind:to="`/user/${item.user}`" class="link-text">{{ item.user }}</router-link>
@@ -14,10 +16,6 @@
             </div>
         </li>
     </ul>
-   
-   
-   
-/ 
 </div>  
 </template>
 
@@ -55,7 +53,7 @@ export default {
     border-bottom: 1px solid #eee;
 }
 .points {
-    width: 20px;
+    width: 80px;
     height: 60px;
     display: flex;
     align-items: center;

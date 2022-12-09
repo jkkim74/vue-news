@@ -3,20 +3,19 @@
     <ul class="jobs-list">
         <li v-for=" item in fetchedJobList" class="job">
             <div class="points">
+                {{( item.points || 0)}}
             </div>
             <div>
                 <p class="job-title"> <a v-bind:href="item.url">{{ item.title }}</a></p>
                 <small class="link-text">
+                    {{ item.time_ago }} by
+                    <a :href="item.url">
                     {{ item.domain }}
+                    </a>
                 </small>
             </div>
         </li>
     </ul>
-    <!-- <p  v-for=" item in fetchedJobList">
-        <a v-bind:href="item.url">{{ item.title }}</a>
-        <small>{{ item.domain }}</small>
-    </p>   -->
-   
 </div>  
 </template>
 
@@ -47,7 +46,7 @@ export default {
     border-bottom: 1px solid #eee;
 }
 .points {
-    width: 20px;
+    width: 80px;
     height: 60px;
     display: flex;
     align-items: center;
