@@ -1,23 +1,30 @@
 <template>
 <div>
-    <p>name    : {{userInfo.id}}</p>
+    <!-- <p>name    : {{userInfo.id}}</p>
     <p>karma   : {{userInfo.karma}}</p>
-    <p>created : {{userInfo.created}}</p>
+    <p>created : {{userInfo.created}}</p> -->
+    <user-profile :info="userInfo">
+        <div slot="username">{{userInfo.id}}</div>
+        <template slot="time">{{userInfo.created}}</template>
+        <div slot="karma">{{userInfo.karma}}</div>
+    </user-profile>
 </div>  
 </template>
 
 <script>
+import UserProfile from '@/components/UserProfile';
 
 export default {
+    components: {
+        UserProfile,
+    },
     computed: {
         userInfo(){
             return this.$store.state.user;
         }
     },
     created(){
-        console.log(this.$route.params.id);
         const userName = this.$route.params.id
-       //axios.get(`https://api.hnpwa.com/v0/user/${userName}.json`);
        this.$store.dispatch('FETCH_USER', userName);
     }
 }
