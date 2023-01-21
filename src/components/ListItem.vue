@@ -45,17 +45,17 @@
 <script>
 //import { mapGetters } from 'vuex';
 export default {
-    created() {
-        //this.$store.dispatch('FETCH_NEWS');
-        const name = this.$route.name;
-        if(name === 'news'){
-            this.$store.dispatch('FETCH_NEWS');
-        } else if(name === 'ask'){
-            this.$store.dispatch('FETCH_ASKS');
-        } else if(name === 'jobs'){
-            this.$store.dispatch('FETCH_JOBS');
-        }
-    },
+    // created() {
+    //     //this.$store.dispatch('FETCH_NEWS');
+    //     const name = this.$route.name;
+    //     if(name === 'news'){
+    //         this.$store.dispatch('FETCH_NEWS');
+    //     } else if(name === 'ask'){
+    //         this.$store.dispatch('FETCH_ASKS');
+    //     } else if(name === 'jobs'){
+    //         this.$store.dispatch('FETCH_JOBS');
+    //     }
+    // },
     computed: {
         // eslint-disable-next-line vue/return-in-computed-property
         listItems() {
